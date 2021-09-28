@@ -4,7 +4,7 @@ export function Persons({person,title}){
     return(
         <div className="section">
             <h3>{title}</h3>
-            {person.map(p => <Person person={p}/> )}
+            {person.map((p,id) => <Person key={id} person={p}/> )}
         </div>
     )
 }

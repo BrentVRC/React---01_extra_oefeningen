@@ -4,7 +4,7 @@ export function Numbers({numbers,title}){
     return (
         <div className="section">
             <h3>{title}</h3>
-            {numbers.map(n => <Number number={n}/>)}
+            {numbers.map((n,id) => <Number key={id} number={n}/>)}
         </div>
     )
 }
