@@ -1,8 +1,17 @@
 
 export function CarColor({car}){
     const colorstring = car.color && `${"kleur: " +car.color}`
+    const color = car.color === "blauw" ? "#0000FF" : "" ||
+    car.color === "geel" ? "#FFFF00" : "" ||
+    car.color === "zwart" ? "#000000" : "" ||
+    car.color === "wit" ? "" : "" ||
+    car.color === "rood" ? "#FF0000" : "" ||
+    car.color === "grijs" ? "#696969" : "" ||
+    car.color === "groen" ? "#008000" : ""
+    const specialStyle = {margin: "0.5em",backgroundColor:color}
+    console.log(specialStyle)
     return(
-        <div className="productNote">{colorstring}</div>
+        <div style={specialStyle} className="productNote">{colorstring}</div>
     )
 }
 

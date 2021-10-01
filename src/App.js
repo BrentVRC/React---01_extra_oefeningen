@@ -10,14 +10,11 @@ function App() {
     function calculateCities(personData){
         const cities = personData.map(p => p.city);
         const uniqueCities = [...new Set(cities)];
-        console.log(uniqueCities)
-        // const personsPerCity = uniqueCities.map(city => personData.reduce((intermediateResult,p) => intermediateResult += (p.city === city ? 1 : 0),0))
         const personsPerCityObject = uniqueCities.map(city => ({
             name: city ,
             numberOfPersons: personData.reduce((intermediateResult,p) => intermediateResult += (p.city === city ? 1 : 0),0)}))
         return personsPerCityObject
     }
-    calculateCities(PERSON_DATA)
   return (
 
     <div className="App">
